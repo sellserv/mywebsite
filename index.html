@@ -5,7 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Account Penetrator (PRANK)</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background-color: #000;
+            color: #0f0;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        h1, h2 {
+            color: #0f0;
+            text-align: center;
+            margin-bottom: 0.5em;
+            font-size: 1.5em;
+        }
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            font-weight: normal;
+        }
+        .input-container {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            margin-bottom: 15px;
+            background-color: #222;
+            color: #0f0;
+            border: 2px solid #0f0;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Press Start 2P', monospace;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px #0f0;
+        }
+        button {
+            padding: 12px 24px;
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #0a0;
+            color: #fff;
+        }
+        #progress-container {
+            width: 90%;
+            max-width: 400px;
+            background-color: #222;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            border: 2px solid #0f0;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+        #progress-bar {
+            background-color: #0f0;
+            height: 20px;
+            width: 0%;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 20px;
+            color: #000;
+            transition: width 0.1s ease;
+            font-size: 0.8em;
+        }
+        #output {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+            width: 90%;
+            max-width: 400px;
+            border: 2px solid #0f0;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #222;
+            box-sizing: border-box;
+        }
+        #output h2 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        #output p {
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+        }
+        #disclaimer {
+            margin-top: 30px;
+            font-size: 0.7em;
+            color: #888;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            h2{
+                font-size: 1em;
+            }
+            input[type="text"], button {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+            #progress-bar{
+                font-size: 0.7em;
+            }
+            #output h2{
+                font-size: 1em;
+            }
+            #output p{
+                font-size: 0.8em;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Social Account Penetrator</h1>
@@ -30,6 +168,46 @@
 
     <p id="disclaimer">**DISCLAIMER:** This is a prank website. No actual hacking occurs. Do not attempt to use this for illegal activities.</p>
 
-    <script src="script.js"></script>
+    <script>
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+        const outputDiv = document.getElementById('output');
+        const outputUsername = document.getElementById('output-username');
+        const targetInput = document.getElementById('target-username');
+
+        function updateProgress(percentage) {
+            progressBar.style.width = percentage + '%';
+            progressBar.innerText = percentage + '%';
+        }
+
+        function simulateHack() {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 10) + 5;
+                if (progress > 100) {
+                    clearInterval(interval);
+                    updateProgress(100);
+                    setTimeout(() => {
+                        progressContainer.style.display = 'none';
+                        outputUsername.innerText = targetInput.value;
+                        outputDiv.style.display = 'block';
+                    }, 1500);
+                } else {
+                    updateProgress(progress);
+                }
+            }, 200);
+        }
+
+        function startHack() {
+            if (targetInput.value.trim() !== "") {
+                outputDiv.style.display = 'none';
+                progressContainer.style.display = 'block';
+                updateProgress(0);
+                simulateHack();
+            } else {
+                alert("Please enter a target username or URL.");
+            }
+        }
+    </script>
 </body>
 </html>
