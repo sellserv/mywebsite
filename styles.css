@@ -1,144 +1,32 @@
 body {
-    font-family: sans-serif;
+    background-color: #333; /* Greyish-blackish */
+    color: #fff; /* Default text color for better contrast */
+    font-family: sans-serif; /* A simple, readable font */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 1em 0;
+    padding: 20px 0;
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    margin: 0 1em;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 30px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#hero {
-    background-color: #e0f7fa;
-    text-align: center;
-    padding: 50px 20px;
-    border-radius: 8px;
-}
-
-.hero-content h2 {
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-#explore-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.products-section h2,
-.about-section h2,
-.contact-section h2 {
-    color: #333;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
+header h1 {
+    color: cyan;
+    font-weight: bold;
+    font-size: 2.5em; /* Adjust size as needed */
     margin-bottom: 20px;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.video-container {
+    /* You can add styling to control the video container's appearance */
 }
 
-.product-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.product-card img {
-    max-width: 100%;
+video {
+    max-width: 100%; /* Make video responsive within its container */
     height: auto;
-    margin-bottom: 10px;
-}
-
-.buy-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-}
-
-.buy-button:hover {
-    background-color: #1e7e34;
-}
-
-.contact-section form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.contact-section input,
-.contact-section textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact-section button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    position: sticky;
-    bottom: 0;
-    width: 100%;
+    display: block; /* Prevent extra space below the video */
 }
