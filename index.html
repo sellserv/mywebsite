@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SellServ</title>
+    <title>Social Account Penetrator (PRANK)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>SellServ</h1>
-    </header>
+    <h1>Social Account Penetrator</h1>
+    <h2>Enter Target Details (PRANK)</h2>
 
-    <div class="video-container">
-        <video id="myVideo" width="640" height="360" controls>
-            <source src="your-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div class="input-container">
+        <input type="text" id="target-username" placeholder="Target Username/URL">
+        <button onclick="startHack()">PENETRATE ACCOUNT</button>
     </div>
+
+    <div id="progress-container">
+        <div id="progress-bar">0%</div>
+    </div>
+
+    <div id="output">
+        <h2>ACCOUNT PENETRATION SUCCESSFUL! (FAKE)</h2>
+        <p>Target Username: <span id="output-username"></span></p>
+        <p>Email: <span id="output-email">totallyreal@email.com</span></p>
+        <p>Password: <span id="output-password">password1234</span></p>
+        <p>Last Activity: Deleted browser history.</p>
+    </div>
+
+    <p id="disclaimer">**DISCLAIMER:** This is a prank website. No actual hacking occurs. Do not attempt to use this for illegal activities.</p>
 
     <script src="script.js"></script>
 </body>
